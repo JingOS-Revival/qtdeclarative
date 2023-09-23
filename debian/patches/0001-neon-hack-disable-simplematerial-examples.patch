@@ -1,0 +1,42 @@
+From 54d9020ee6179cc6347f5e45a6b944f569ed3488 Mon Sep 17 00:00:00 2001
+From: Harald Sitter <sitter@kde.org>
+Date: Thu, 13 Feb 2020 13:59:22 +0100
+Subject: [PATCH] neon hack disable simplematerial examples
+
+Error copying /workspace/build/examples/quick/scenegraph/simplematerial/main.qml to /workspace/build/debian/tmp/usr/lib/arm-linux-gnueabihf/qt5/examples/quick/scenegraph/simplematerial/main.qml: Cannot create /workspace/build/debian/tmp/usr/lib/arm-linux-gnueabihf/qt5/examples/quick/scenegraph/simplematerial/main.qml for output
+
+Error copying /workspace/build/examples/qml/tutorials/extending-qml/chapter1-basics/app.qml to /workspace/build/debian/tmp/usr/lib/aarch64-linux-gnu/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/app.qml: Destination file exists
+
+qmake can waste someone else's time
+---
+ examples/qml/qml.pro                     | 1 -
+ examples/quick/scenegraph/scenegraph.pro | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/examples/qml/qml.pro b/examples/qml/qml.pro
+index df73fe0200..1a621a3dc1 100644
+--- a/examples/qml/qml.pro
++++ b/examples/qml/qml.pro
+@@ -12,7 +12,6 @@ qtHaveModule(quick) {
+ 
+ SUBDIRS += \
+           referenceexamples \
+-          tutorials \
+           shell
+ 
+ EXAMPLE_FILES = \
+diff --git a/examples/quick/scenegraph/scenegraph.pro b/examples/quick/scenegraph/scenegraph.pro
+index 5fea3b974a..0ce353720f 100644
+--- a/examples/quick/scenegraph/scenegraph.pro
++++ b/examples/quick/scenegraph/scenegraph.pro
+@@ -3,7 +3,6 @@ TEMPLATE = subdirs
+ qtConfig(opengl(es1|es2)?) {
+     SUBDIRS += \
+             graph \
+-            simplematerial \
+             sgengine \
+             fboitem \
+             openglunderqml \
+-- 
+2.17.1
+

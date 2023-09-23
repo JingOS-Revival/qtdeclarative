@@ -1,0 +1,9 @@
+# Debian patches
+disableopengltests.patch
+#fix_test_remove_qlibraryinfo.patch
+wait_for_window_exposed.patch
+remove_youtube_iframe.patch
+riscv64-latomic.patch
+python3.patch
+0001-neon-hack-disable-simplematerial-examples.patch
+qtdeclarative.git-3e47ac319b0f53c43cc02a8356c2dec4f0daeef4.patch
